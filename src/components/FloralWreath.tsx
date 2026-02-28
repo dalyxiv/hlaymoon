@@ -1,96 +1,97 @@
+const Flower = ({ cx, cy, size, color, petalColor, rotation = 0 }: { cx: number; cy: number; size: number; color: string; petalColor: string; rotation?: number }) => {
+  const petalCount = 5;
+  return (
+    <g transform={`rotate(${rotation}, ${cx}, ${cy})`}>
+      {Array.from({ length: petalCount }).map((_, i) => {
+        const angle = (i * 360) / petalCount;
+        const rad = (angle * Math.PI) / 180;
+        const px = cx + size * 0.6 * Math.cos(rad);
+        const py = cy + size * 0.6 * Math.sin(rad);
+        return (
+          <ellipse
+            key={i}
+            cx={px}
+            cy={py}
+            rx={size * 0.55}
+            ry={size * 0.35}
+            fill={petalColor}
+            opacity={0.75}
+            transform={`rotate(${angle}, ${px}, ${py})`}
+          />
+        );
+      })}
+      <circle cx={cx} cy={cy} r={size * 0.25} fill={color} opacity={0.9} />
+    </g>
+  );
+};
+
+const Leaf = ({ cx, cy, angle, size }: { cx: number; cy: number; angle: number; size: number }) => (
+  <g transform={`rotate(${angle}, ${cx}, ${cy})`}>
+    <path
+      d={`M${cx},${cy} Q${cx + size * 0.4},${cy - size * 0.8} ${cx + size},${cy - size * 0.2} Q${cx + size * 0.5},${cy + size * 0.3} ${cx},${cy}`}
+      fill="hsl(145, 25%, 55%)"
+      opacity={0.55}
+    />
+  </g>
+);
+
 const FloralWreath = ({ className = "", size = 400 }: { className?: string; size?: number }) => {
-  const petals = Array.from({ length: 12 });
-  const innerPetals = Array.from({ length: 8 });
-  
+  const outerCount = 10;
+  const innerCount = 7;
+
+  const flowerStyles = [
+    { color: 'hsl(40, 50%, 55%)', petalColor: 'hsl(350, 40%, 65%)' },
+    { color: 'hsl(40, 50%, 60%)', petalColor: 'hsl(5, 50%, 82%)' },
+    { color: 'hsl(45, 45%, 55%)', petalColor: 'hsl(320, 22%, 60%)' },
+    { color: 'hsl(38, 55%, 55%)', petalColor: 'hsl(38, 50%, 78%)' },
+    { color: 'hsl(50, 40%, 50%)', petalColor: 'hsl(350, 35%, 72%)' },
+  ];
+
   return (
     <div className={`relative ${className}`} style={{ width: size, height: size }}>
-      {/* Outer ring of petals */}
+      {/* Outer ring */}
       <div className="absolute inset-0 animate-spin-slow">
         <svg viewBox="0 0 400 400" className="w-full h-full">
-          {petals.map((_, i) => {
-            const angle = (i * 360) / petals.length;
+          {Array.from({ length: outerCount }).map((_, i) => {
+            const angle = (i * 360) / outerCount;
             const rad = (angle * Math.PI) / 180;
-            const cx = 200 + 160 * Math.cos(rad);
-            const cy = 200 + 160 * Math.sin(rad);
-            const colors = [
-              'hsl(350, 40%, 65%)',   // rose
-              'hsl(5, 45%, 85%)',     // blush
-              'hsl(320, 20%, 55%)',   // mauve
-              'hsl(38, 50%, 80%)',    // champagne
-              'hsl(145, 20%, 60%)',   // sage
-              'hsl(350, 35%, 70%)',   // light rose
-            ];
+            const cx = 200 + 155 * Math.cos(rad);
+            const cy = 200 + 155 * Math.sin(rad);
+            const style = flowerStyles[i % flowerStyles.length];
             return (
-              <g key={i} transform={`rotate(${angle}, ${cx}, ${cy})`}>
-                <ellipse
-                  cx={cx}
-                  cy={cy}
-                  rx={22}
-                  ry={35}
-                  fill={colors[i % colors.length]}
-                  opacity={0.7}
-                />
-                <ellipse
-                  cx={cx + 8}
-                  cy={cy - 5}
-                  rx={15}
-                  ry={25}
-                  fill={colors[(i + 1) % colors.length]}
-                  opacity={0.5}
-                />
-              </g>
+              <Flower key={i} cx={cx} cy={cy} size={24} color={style.color} petalColor={style.petalColor} rotation={angle} />
             );
           })}
-          {/* Decorative leaves */}
-          {petals.map((_, i) => {
-            const angle = (i * 360) / petals.length + 15;
+          {/* Leaves between flowers */}
+          {Array.from({ length: outerCount }).map((_, i) => {
+            const angle = (i * 360) / outerCount + 18;
             const rad = (angle * Math.PI) / 180;
-            const cx = 200 + 170 * Math.cos(rad);
-            const cy = 200 + 170 * Math.sin(rad);
-            return (
-              <ellipse
-                key={`leaf-${i}`}
-                cx={cx}
-                cy={cy}
-                rx={8}
-                ry={18}
-                fill="hsl(145, 25%, 55%)"
-                opacity={0.5}
-                transform={`rotate(${angle + 45}, ${cx}, ${cy})`}
-              />
-            );
+            const cx = 200 + 165 * Math.cos(rad);
+            const cy = 200 + 165 * Math.sin(rad);
+            return <Leaf key={`l-${i}`} cx={cx} cy={cy} angle={angle + 30} size={18} />;
           })}
         </svg>
       </div>
-      
+
       {/* Inner ring */}
-      <div className="absolute inset-[15%] animate-spin-reverse-slow">
+      <div className="absolute inset-[18%] animate-spin-reverse-slow">
         <svg viewBox="0 0 300 300" className="w-full h-full">
-          {innerPetals.map((_, i) => {
-            const angle = (i * 360) / innerPetals.length;
+          {Array.from({ length: innerCount }).map((_, i) => {
+            const angle = (i * 360) / innerCount;
             const rad = (angle * Math.PI) / 180;
-            const cx = 150 + 110 * Math.cos(rad);
-            const cy = 150 + 110 * Math.sin(rad);
+            const cx = 150 + 105 * Math.cos(rad);
+            const cy = 150 + 105 * Math.sin(rad);
+            const style = flowerStyles[(i + 2) % flowerStyles.length];
             return (
-              <g key={i}>
-                <ellipse
-                  cx={cx}
-                  cy={cy}
-                  rx={18}
-                  ry={28}
-                  fill="hsl(38, 50%, 80%)"
-                  opacity={0.5}
-                  transform={`rotate(${angle}, ${cx}, ${cy})`}
-                />
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r={5}
-                  fill="hsl(350, 40%, 65%)"
-                  opacity={0.6}
-                />
-              </g>
+              <Flower key={i} cx={cx} cy={cy} size={18} color={style.color} petalColor={style.petalColor} rotation={angle * 2} />
             );
+          })}
+          {Array.from({ length: innerCount }).map((_, i) => {
+            const angle = (i * 360) / innerCount + 25;
+            const rad = (angle * Math.PI) / 180;
+            const cx = 150 + 112 * Math.cos(rad);
+            const cy = 150 + 112 * Math.sin(rad);
+            return <Leaf key={`il-${i}`} cx={cx} cy={cy} angle={angle - 10} size={14} />;
           })}
         </svg>
       </div>
