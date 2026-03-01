@@ -50,7 +50,7 @@ const HeroSection = () => {
             We're Getting Married!
           </p>
           <p className="font-body text-lg text-muted-foreground">
-            April 2025 • Cairo, Egypt
+            April 3, 2026 • Cairo, Egypt
           </p>
         </motion.div>
 

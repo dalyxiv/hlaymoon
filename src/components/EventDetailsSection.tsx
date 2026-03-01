@@ -32,15 +32,18 @@ const EventDetailsSection = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <Calendar className="w-5 h-5 text-rose" />
-                <span className="font-body">April 25, 2025</span>
+                <span className="font-body">Friday, April 3, 2026</span>
               </div>
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <Clock className="w-5 h-5 text-rose" />
-                <span className="font-body">6:00 PM</span>
+                <span className="font-body">4:30 PM</span>
               </div>
               <div className="flex items-center justify-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-rose" />
-                <span className="font-body">Cairo, Egypt</span>
+                <span className="font-body">Le Passage Cairo International Airport</span>
+              </div>
+              <div className="mt-4 px-4 py-2 rounded-xl bg-blush/30 border border-border">
+                <p className="font-body text-sm text-muted-foreground italic">🚫 This is an adults-only celebration — kids are not allowed</p>
               </div>
             </div>
           </motion.div>
@@ -67,12 +70,12 @@ const EventDetailsSection = () => {
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blush/40 flex items-center justify-center animate-float">
                     <MapPin className="w-10 h-10 text-primary" />
                   </div>
-                  <h4 className="font-heading text-xl text-foreground mb-2">Cairo, Egypt</h4>
+                  <h4 className="font-heading text-xl text-foreground mb-2">Le Passage Cairo</h4>
                   <p className="font-body text-sm text-muted-foreground">
-                    Venue details coming soon
+                    Cairo International Airport
                   </p>
                   <p className="font-body text-xs text-muted-foreground mt-4 italic">
-                    On the banks of the eternal Nile
+                    Friday, April 3, 2026 • 4:30 PM
                   </p>
                 </div>
               </div>
@@ -101,7 +104,7 @@ const EventDetailsSection = () => {
           className="mt-12 text-center"
         >
           <p className="font-script text-2xl text-primary">
-            "Two souls, one heart, one forever"
+            "Our love story brought us here, but it's your love and support that make this day unforgettable"
           </p>
         </motion.div>
       </div>
