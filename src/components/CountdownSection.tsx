@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const WEDDING_DATE = new Date('2025-04-25T18:00:00');
+const WEDDING_DATE = new Date('2026-04-03T16:30:00');
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
