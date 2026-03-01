@@ -4,15 +4,15 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: '/hlaymoon/', // Add this line here
+  base: '/hlaymoon/', // Add this line!
   server: {
     host: "::",
     port: 8080,
-    // ... rest of your config
     hmr: {
       overlay: false,
     },
   },
+  // ... rest of your config
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
