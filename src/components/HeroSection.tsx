@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import FloralWreath from './FloralWreath';
+import heroBg from '@/assets/hero-bg.png';
 
 const HeroSection = () => {
   const scrollToRSVP = () => {
