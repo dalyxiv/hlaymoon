@@ -42,7 +42,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="font-script text-4xl md:text-6xl text-primary mb-4"
+          className="font-script text-4xl md:text-6xl text-white mb-4 drop-shadow-lg"
         >
           Welcome
         </motion.p>
@@ -51,7 +51,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="font-elegant text-lg md:text-xl text-muted-foreground tracking-[0.3em] uppercase mb-8"
+          className="font-elegant text-lg md:text-xl text-white/90 tracking-[0.3em] uppercase mb-8 drop-shadow-md"
         >
           You're cordially invited to
         </motion.p>
@@ -73,11 +73,11 @@ const HeroSection = () => {
               transition={{ delay: 1.2, duration: 1 }}
               className="space-y-1"
             >
-              <h1 className="font-heading text-4xl md:text-6xl text-foreground leading-tight tracking-[0.15em]">
+              <h1 className="font-heading text-4xl md:text-6xl text-white leading-tight tracking-[0.15em] drop-shadow-lg">
                 HLA
               </h1>
-              <span className="font-elegant text-2xl md:text-3xl text-mauve italic block">and</span>
-              <h1 className="font-heading text-4xl md:text-6xl text-foreground leading-tight tracking-[0.15em]">
+              <span className="font-elegant text-2xl md:text-3xl text-white/80 italic block drop-shadow-md">and</span>
+              <h1 className="font-heading text-4xl md:text-6xl text-white leading-tight tracking-[0.15em] drop-shadow-lg">
                 AYMAN'S
               </h1>
             </motion.div>
@@ -91,23 +91,23 @@ const HeroSection = () => {
           transition={{ delay: 1.8, duration: 1 }}
           className="mt-8 space-y-4"
         >
-          <p className="font-heading text-2xl md:text-3xl text-foreground tracking-[0.25em] uppercase">
+          <p className="font-heading text-2xl md:text-3xl text-white tracking-[0.25em] uppercase drop-shadow-lg">
             Wedding
           </p>
           <div className="space-y-2">
-            <p className="font-elegant text-lg text-muted-foreground italic">at</p>
-            <p className="font-heading text-base md:text-lg text-foreground tracking-[0.15em] uppercase">
+            <p className="font-elegant text-lg text-white/80 italic drop-shadow-md">at</p>
+            <p className="font-heading text-base md:text-lg text-white tracking-[0.15em] uppercase drop-shadow-md">
               Le Passage Hotel
             </p>
-            <p className="font-heading text-base md:text-lg text-foreground tracking-[0.15em] uppercase">
+            <p className="font-heading text-base md:text-lg text-white tracking-[0.15em] uppercase drop-shadow-md">
               Cairo International Airport
             </p>
           </div>
           <div className="pt-2 space-y-1">
-            <p className="font-elegant text-base text-muted-foreground tracking-[0.2em] uppercase">
+            <p className="font-elegant text-base text-white/80 tracking-[0.2em] uppercase drop-shadow-md">
               Friday, April Third
             </p>
-            <p className="font-elegant text-base text-muted-foreground tracking-[0.15em]">
+            <p className="font-elegant text-base text-white/80 tracking-[0.15em] drop-shadow-md">
               3/4/2026
             </p>
           </div>
