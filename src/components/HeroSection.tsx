@@ -73,11 +73,11 @@ const HeroSection = () => {
               transition={{ delay: 1.2, duration: 1 }}
               className="space-y-1"
             >
-              <h1 className="font-heading text-4xl md:text-6xl text-foreground leading-tight tracking-[0.15em]">
+              <h1 className="font-heading text-4xl md:text-6xl text-white leading-tight tracking-[0.15em] drop-shadow-lg">
                 HLA
               </h1>
-              <span className="font-elegant text-2xl md:text-3xl text-mauve italic block">and</span>
-              <h1 className="font-heading text-4xl md:text-6xl text-foreground leading-tight tracking-[0.15em]">
+              <span className="font-elegant text-2xl md:text-3xl text-white/80 italic block drop-shadow-md">and</span>
+              <h1 className="font-heading text-4xl md:text-6xl text-white leading-tight tracking-[0.15em] drop-shadow-lg">
                 AYMAN'S
               </h1>
             </motion.div>
