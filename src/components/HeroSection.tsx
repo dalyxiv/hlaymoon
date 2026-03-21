@@ -42,7 +42,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="font-script text-4xl md:text-6xl text-primary mb-4"
+          className="font-script text-4xl md:text-6xl text-white mb-4 drop-shadow-lg"
         >
           Welcome
         </motion.p>
