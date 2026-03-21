@@ -51,7 +51,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="font-elegant text-lg md:text-xl text-muted-foreground tracking-[0.3em] uppercase mb-8"
+          className="font-elegant text-lg md:text-xl text-white/90 tracking-[0.3em] uppercase mb-8 drop-shadow-md"
         >
           You're cordially invited to
         </motion.p>
