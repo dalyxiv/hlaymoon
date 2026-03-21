@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +6,47 @@
 
 @layer base {
   :root {
-    --background: 30 33% 96%;
-    --foreground: 20 25% 20%;
+    --background: 260 30% 95%;
+    --foreground: 260 20% 15%;
 
-    --card: 30 30% 94%;
-    --card-foreground: 20 25% 20%;
+    --card: 270 25% 92%;
+    --card-foreground: 260 20% 15%;
 
-    --popover: 30 33% 96%;
-    --popover-foreground: 20 25% 20%;
+    --popover: 260 30% 95%;
+    --popover-foreground: 260 20% 15%;
 
-    --primary: 350 35% 55%;
-    --primary-foreground: 30 33% 96%;
+    --primary: 310 50% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 40% 88%;
-    --secondary-foreground: 20 25% 25%;
+    --secondary: 180 30% 85%;
+    --secondary-foreground: 260 20% 20%;
 
-    --muted: 30 20% 90%;
-    --muted-foreground: 20 10% 50%;
+    --muted: 270 15% 90%;
+    --muted-foreground: 260 10% 45%;
 
-    --accent: 145 20% 60%;
-    --accent-foreground: 145 30% 15%;
+    --accent: 145 35% 45%;
+    --accent-foreground: 145 30% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 25% 85%;
-    --input: 30 25% 85%;
-    --ring: 350 35% 55%;
+    --border: 270 20% 85%;
+    --input: 270 20% 85%;
+    --ring: 310 50% 55%;
 
     --radius: 0.75rem;
 
     /* Wedding-specific tokens */
-    --rose: 350 40% 65%;
-    --mauve: 320 20% 55%;
+    --rose: 310 55% 55%;
+    --mauve: 280 35% 50%;
     --champagne: 38 50% 80%;
-    --blush: 5 45% 85%;
-    --sage: 145 20% 60%;
-    --cream: 35 40% 92%;
+    --blush: 290 30% 85%;
+    --sage: 145 35% 45%;
+    --cream: 270 25% 93%;
     --gold: 40 60% 50%;
+    --teal: 180 40% 40%;
+    --purple-deep: 260 40% 35%;
+    --magenta: 320 60% 55%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,23 +59,23 @@
   }
 
   .dark {
-    --background: 20 20% 10%;
-    --foreground: 30 30% 90%;
-    --card: 20 20% 12%;
-    --card-foreground: 30 30% 90%;
-    --popover: 20 20% 12%;
-    --popover-foreground: 30 30% 90%;
-    --primary: 350 35% 60%;
-    --primary-foreground: 20 20% 10%;
-    --secondary: 20 20% 18%;
-    --secondary-foreground: 30 30% 90%;
-    --muted: 20 15% 18%;
-    --muted-foreground: 30 15% 60%;
-    --accent: 145 20% 35%;
+    --background: 260 25% 8%;
+    --foreground: 270 20% 92%;
+    --card: 260 25% 11%;
+    --card-foreground: 270 20% 92%;
+    --popover: 260 25% 11%;
+    --popover-foreground: 270 20% 92%;
+    --primary: 310 50% 60%;
+    --primary-foreground: 260 25% 8%;
+    --secondary: 180 25% 18%;
+    --secondary-foreground: 270 20% 92%;
+    --muted: 260 15% 18%;
+    --muted-foreground: 270 15% 60%;
+    --accent: 145 30% 35%;
     --accent-foreground: 145 20% 90%;
-    --border: 20 15% 22%;
-    --input: 20 15% 22%;
-    --ring: 350 35% 60%;
+    --border: 260 15% 22%;
+    --input: 260 15% 22%;
+    --ring: 310 50% 60%;
   }
 }
 
@@ -87,22 +90,25 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cinzel', serif;
   }
 }
 
 @layer utilities {
   .font-script {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Great Vibes', cursive;
   }
 
   .font-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cinzel', serif;
   }
 
   .font-body {
     font-family: 'Lora', serif;
+  }
+
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
   }
 }
 
@@ -142,8 +148,13 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsl(var(--rose) / 0.2); }
-  50% { box-shadow: 0 0 40px hsl(var(--rose) / 0.4); }
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--magenta) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--magenta) / 0.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 .animate-spin-slow {
@@ -170,6 +181,11 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% auto;
+}
+
 /* Petal falling animation classes */
 .petal-fall {
   animation: petal-fall linear forwards;
@@ -183,11 +199,20 @@
   background: hsl(var(--cream));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--rose) / 0.4);
+  background: hsl(var(--magenta) / 0.4);
   border-radius: 3px;
 }
 
-/* Floral SVG patterns */
+/* Watercolor-style background */
+.bg-watercolor {
+  background: 
+    radial-gradient(ellipse at 20% 20%, hsl(180, 40%, 60%, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, hsl(280, 40%, 60%, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(320, 50%, 60%, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 70%, hsl(145, 30%, 50%, 0.15) 0%, transparent 40%),
+    hsl(var(--background));
+}
+
 .bg-floral-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a0a0' fill-opacity='0.06'%3E%3Cpath d='M30 30c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zM10 30c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b6ea0' fill-opacity='0.06'%3E%3Cpath d='M30 30c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zM10 30c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }

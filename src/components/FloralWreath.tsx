@@ -29,8 +29,8 @@ const Leaf = ({ cx, cy, angle, size }: { cx: number; cy: number; angle: number; 
   <g transform={`rotate(${angle}, ${cx}, ${cy})`}>
     <path
       d={`M${cx},${cy} Q${cx + size * 0.4},${cy - size * 0.8} ${cx + size},${cy - size * 0.2} Q${cx + size * 0.5},${cy + size * 0.3} ${cx},${cy}`}
-      fill="hsl(145, 25%, 55%)"
-      opacity={0.55}
+      fill="hsl(145, 35%, 45%)"
+      opacity={0.6}
     />
   </g>
 );
@@ -40,11 +40,11 @@ const FloralWreath = ({ className = "", size = 400 }: { className?: string; size
   const innerCount = 7;
 
   const flowerStyles = [
-    { color: 'hsl(40, 50%, 55%)', petalColor: 'hsl(350, 40%, 65%)' },
-    { color: 'hsl(40, 50%, 60%)', petalColor: 'hsl(5, 50%, 82%)' },
-    { color: 'hsl(45, 45%, 55%)', petalColor: 'hsl(320, 22%, 60%)' },
-    { color: 'hsl(38, 55%, 55%)', petalColor: 'hsl(38, 50%, 78%)' },
-    { color: 'hsl(50, 40%, 50%)', petalColor: 'hsl(350, 35%, 72%)' },
+    { color: 'hsl(50, 50%, 60%)', petalColor: 'hsl(320, 60%, 55%)' },
+    { color: 'hsl(50, 45%, 55%)', petalColor: 'hsl(280, 35%, 55%)' },
+    { color: 'hsl(45, 50%, 58%)', petalColor: 'hsl(310, 50%, 60%)' },
+    { color: 'hsl(50, 45%, 55%)', petalColor: 'hsl(340, 45%, 60%)' },
+    { color: 'hsl(45, 50%, 55%)', petalColor: 'hsl(290, 40%, 55%)' },
   ];
 
   return (
@@ -62,7 +62,6 @@ const FloralWreath = ({ className = "", size = 400 }: { className?: string; size
               <Flower key={i} cx={cx} cy={cy} size={24} color={style.color} petalColor={style.petalColor} rotation={angle} />
             );
           })}
-          {/* Leaves between flowers */}
           {Array.from({ length: outerCount }).map((_, i) => {
             const angle = (i * 360) / outerCount + 18;
             const rad = (angle * Math.PI) / 180;

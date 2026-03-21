@@ -15,10 +15,11 @@ const FallingPetals = () => {
   
   useEffect(() => {
     const colors = [
-      'hsl(350, 40%, 65%)',
-      'hsl(5, 45%, 85%)',
-      'hsl(320, 20%, 55%)',
-      'hsl(38, 50%, 80%)',
+      'hsl(320, 60%, 55%)',
+      'hsl(280, 35%, 50%)',
+      'hsl(310, 50%, 55%)',
+      'hsl(180, 40%, 40%)',
+      'hsl(145, 35%, 45%)',
     ];
     
     const generated: Petal[] = Array.from({ length: 15 }, (_, i) => ({

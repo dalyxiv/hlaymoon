@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const WEDDING_DATE = new Date('2026-04-03T16:30:00');
+const WEDDING_DATE = new Date('2026-04-03T17:00:00');
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
@@ -29,7 +29,6 @@ const CountdownSection = () => {
     { label: 'Seconds', value: timeLeft.seconds },
   ];
 
-  // Rotating petal ring
   const petalCount = 16;
 
   return (
@@ -39,11 +38,11 @@ const CountdownSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl text-foreground mb-4"
+          className="font-heading text-4xl md:text-5xl text-foreground mb-4 tracking-[0.15em]"
         >
           Counting Down to Forever
         </motion.h2>
-        <p className="font-body text-muted-foreground mb-16">Every moment brings us closer</p>
+        <p className="font-elegant text-lg text-muted-foreground mb-16 italic">Every moment brings us closer</p>
 
         {/* Timer with petal ring */}
         <div className="relative inline-block">
@@ -62,7 +61,7 @@ const CountdownSection = () => {
                     cy={cy}
                     rx={12}
                     ry={20}
-                    fill={i % 2 === 0 ? 'hsl(350, 40%, 65%)' : 'hsl(38, 50%, 80%)'}
+                    fill={i % 3 === 0 ? 'hsl(320, 60%, 55%)' : i % 3 === 1 ? 'hsl(280, 35%, 50%)' : 'hsl(180, 40%, 40%)'}
                     opacity={0.6}
                     transform={`rotate(${angle}, ${cx}, ${cy})`}
                   />
@@ -86,7 +85,7 @@ const CountdownSection = () => {
                 <span className="font-script text-3xl md:text-5xl text-primary">
                   {String(unit.value).padStart(2, '0')}
                 </span>
-                <span className="font-body text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-widest">
+                <span className="font-elegant text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-widest">
                   {unit.label}
                 </span>
               </div>
