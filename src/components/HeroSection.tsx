@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import FloralWreath from './FloralWreath';
+import heroBg from '@/assets/hero-bg.png';
 
 const HeroSection = () => {
   const scrollToRSVP = () => {
@@ -7,7 +8,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-watercolor">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Watercolor flower background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      <div className="absolute inset-0 bg-background/30" />
       {/* Botanical leaf decorations */}
       <div className="absolute top-0 right-0 w-64 h-96 opacity-30">
         <svg viewBox="0 0 200 400" className="w-full h-full">
