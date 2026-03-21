@@ -54,6 +54,9 @@ export default {
         sage: "hsl(var(--sage))",
         cream: "hsl(var(--cream))",
         gold: "hsl(var(--gold))",
+        teal: "hsl(var(--teal))",
+        "purple-deep": "hsl(var(--purple-deep))",
+        magenta: "hsl(var(--magenta))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
