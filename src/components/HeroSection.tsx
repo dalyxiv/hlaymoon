@@ -91,23 +91,23 @@ const HeroSection = () => {
           transition={{ delay: 1.8, duration: 1 }}
           className="mt-8 space-y-4"
         >
-          <p className="font-heading text-2xl md:text-3xl text-foreground tracking-[0.25em] uppercase">
+          <p className="font-heading text-2xl md:text-3xl text-white tracking-[0.25em] uppercase drop-shadow-lg">
             Wedding
           </p>
           <div className="space-y-2">
-            <p className="font-elegant text-lg text-muted-foreground italic">at</p>
-            <p className="font-heading text-base md:text-lg text-foreground tracking-[0.15em] uppercase">
+            <p className="font-elegant text-lg text-white/80 italic drop-shadow-md">at</p>
+            <p className="font-heading text-base md:text-lg text-white tracking-[0.15em] uppercase drop-shadow-md">
               Le Passage Hotel
             </p>
-            <p className="font-heading text-base md:text-lg text-foreground tracking-[0.15em] uppercase">
+            <p className="font-heading text-base md:text-lg text-white tracking-[0.15em] uppercase drop-shadow-md">
               Cairo International Airport
             </p>
           </div>
           <div className="pt-2 space-y-1">
-            <p className="font-elegant text-base text-muted-foreground tracking-[0.2em] uppercase">
+            <p className="font-elegant text-base text-white/80 tracking-[0.2em] uppercase drop-shadow-md">
               Friday, April Third
             </p>
-            <p className="font-elegant text-base text-muted-foreground tracking-[0.15em]">
+            <p className="font-elegant text-base text-white/80 tracking-[0.15em] drop-shadow-md">
               3/4/2026
             </p>
           </div>
