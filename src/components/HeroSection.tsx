@@ -89,7 +89,7 @@ const HeroSection = () => {
           className="mt-14 animate-pulse-glow bg-primary text-primary-foreground font-heading text-lg px-10 py-4 rounded-full 
                      hover:scale-105 transition-transform duration-300 tracking-[0.2em] uppercase"
         >
-          ✿ Celebrate With Us ✿
+          Celebrate With Us
         </motion.button>
       </div>
     </section>

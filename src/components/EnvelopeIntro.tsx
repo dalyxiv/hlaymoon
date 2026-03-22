@@ -43,8 +43,7 @@ const EnvelopeIntro = ({ onOpen, isOpen }: EnvelopeIntroProps) => {
               initial={{ scale: 0, rotate: -10 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ duration: 1, ease: [0.34, 1.56, 0.64, 1] }}
-              onClick={onOpen}
-              className="cursor-pointer group"
+              className="group"
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
