@@ -12,7 +12,8 @@ const EnvelopeIntro = ({ onOpen, isOpen }: EnvelopeIntroProps) => {
         <motion.div
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-[hsl(280,35%,25%)] via-[hsl(310,40%,30%)] to-[hsl(260,30%,20%)]"
+          onClick={onOpen}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-[hsl(280,35%,25%)] via-[hsl(310,40%,30%)] to-[hsl(260,30%,20%)] cursor-pointer"
         >
           {/* Floating petals in background */}
           {Array.from({ length: 8 }).map((_, i) => (
@@ -42,8 +43,7 @@ const EnvelopeIntro = ({ onOpen, isOpen }: EnvelopeIntroProps) => {
               initial={{ scale: 0, rotate: -10 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ duration: 1, ease: [0.34, 1.56, 0.64, 1] }}
-              onClick={onOpen}
-              className="cursor-pointer group"
+              className="group"
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
